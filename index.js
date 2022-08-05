@@ -13,7 +13,7 @@ function promptProject() {
         {
             type: 'input',
             name: 'projectName',
-            message: 'Enter the name of your project',
+            message: 'Enter the name of your project: ',
             validate: projectInput => {
                 if (projectInput) {
                     return true;
@@ -26,7 +26,7 @@ function promptProject() {
         {
             type: 'input',
             name: 'projectDesc',
-            message: 'Enter a short description for your project',
+            message: 'Enter a short description for your project: ',
             validate: projectDesc => {
                 if (projectDesc) {
                     return true;
@@ -39,7 +39,7 @@ function promptProject() {
         {
             type: 'input',
             name: 'projectReason',
-            message: 'Enter why did you build this project',
+            message: 'Enter why did you build this project: ',
             validate: projectReason => {
                 if (projectReason) {
                     return true;
@@ -65,7 +65,7 @@ function promptProject() {
         {
             type: 'input',
             name: 'credit',
-            message: 'Enter the GitHub username for the Credits section',
+            message: 'Enter the GitHub username for the Credits section: ',
             validate: credit => {
                 if (credit) {
                     return true;
@@ -92,7 +92,7 @@ function promptInstall(projectData) {
         {
             type: 'input',
             name: 'install',
-            message: 'Provide a step-by-step to install your project',
+            message: 'Provide a step-by-step to install your project: ',
             validate: step => {
                 if (step) {
                     return true;
@@ -120,6 +120,7 @@ function promptInstall(projectData) {
 };
 
 function promptUsage(projectData) {
+    console.log(projectData);
     if (!projectData.instructions) {
         projectData.instructions = [];
     }
@@ -133,7 +134,7 @@ function promptUsage(projectData) {
         {
             type: 'input',
             name: 'instruction',
-            message: 'Provide instructions on how to use your project',
+            message: 'Provide instructions on how to use your project: ',
             validate: usage => {
                 if (usage) {
                     return true;
