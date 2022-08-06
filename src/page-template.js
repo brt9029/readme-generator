@@ -1,9 +1,9 @@
 function installation(steps) {
     return `${steps
         .map(({ install }) => {
-            return `- ${install}\n`;
+            return `- ${install}`;
         })
-        .join('')}`;
+        .join('\n')}`;
 };
 
 function usage(instructions) {
@@ -11,7 +11,7 @@ function usage(instructions) {
         .map(({ instruction }) => {
         return `- ${instruction}`
         })
-        .join('')}`;
+        .join('\n')}`;
 }
 
 export function generateReadme(readmeData) {
@@ -38,5 +38,8 @@ ${installation(steps)}
 ${usage(instructions)}
 
 ## Credits
-- ${main.credit}`;
+Created by: [${main.credit}](wwww.github.com/${main.credit} "GitHub Profile Link")
+
+## License
+Licensed under the MIT License`;
 };
