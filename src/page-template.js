@@ -1,34 +1,42 @@
 function installation(steps) {
-    // parse through the steps and format
+    return `${steps
+        .map(({ install }) => {
+            return `- ${install}\n`;
+        })
+        .join('')}`;
 };
+
+function usage(instructions) {
+    return `${instructions
+        .map(({ instruction }) => {
+        return `- ${instruction}`
+        })
+        .join('')}`;
+}
 
 export function generateReadme(readmeData) {
     const { steps, instructions, ...main } = readmeData;
 
-    return `
-    # ${main.projectName}
+    return `# ${main.projectName}
 
-    ## Description
-
-    - ${main.projectDesc}
-    - ${main.projectReason}
-    - ${main.projectLearn}
+## Description
+- ${main.projectDesc}
+- ${main.projectReason}
+- ${main.projectLearn}
 
 
-    ## Table of Contents
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Credits](#credits)
-    - [License](#license)
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-    ## Installation
-    ${steps[0].install}
-    ${installation(steps)}
+## Installation
+${installation(steps)}
 
-    ## Usage
+## Usage
+${usage(instructions)}
 
-
-    ## Credits
-    
-    `;
+## Credits
+- ${main.credit}`;
 };
