@@ -120,7 +120,6 @@ function promptInstall(projectData) {
 };
 
 function promptUsage(projectData) {
-    console.log(projectData);
     if (!projectData.instructions) {
         projectData.instructions = [];
     }
